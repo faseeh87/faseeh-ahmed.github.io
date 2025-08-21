@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faseeh Ahmed - Business Intelligence & Data Analytics Professional</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: white;
+            font-weight: bold;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .title {
+            color: #667eea;
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #555;
+        }
+
+        .contact-item i {
+            color: #667eea;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+        }
+
+        .sidebar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            height: fit-content;
+        }
+
+        .content {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section h2 i {
+            color: #667eea;
+        }
+
+        .skills-grid {
+            display: grid;
+            gap: 15px;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .skill-category h3 {
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            background: #667eea;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            height: 100%;
+            width: 3px;
+            background: #667eea;
+        }
+
+        .timeline-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            position: relative;
+            border-left: 4px solid #667eea;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -33px;
+            top: 25px;
+            width: 12px;
+            height: 12px;
+            background: #667eea;
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+
+        .job-title {
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+
+        .company {
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .duration {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .achievements {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .achievements li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        .achievements li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.6);
+        }
+
+        .highlight-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .stat-item {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .highlight-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .certifications li, .languages li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            color: #555;
+        }
+
+        .certifications li:last-child, .languages li:last-child {
+            border-bottom: none;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <div class="profile-img">FA</div>
+            <h1>Faseeh Ahmed</h1>
+            <div class="title">Business Intelligence & Data Analytics Professional</div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+91-8762805856</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>faseeh.ahmed1987@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Bengaluru, Karnataka, India</span>
+                </div>
+            </div>
+            
+            <!-- Key Statistics -->
+            <div class="highlight-stats">
+                <div class="stat-item">
+                    <span class="stat-number">17</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100+</span>
+                    <span class="stat-label">Power BI Dashboards</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">$1.2M</span>
+                    <span class="stat-label">Cost Savings Identified</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">30%</span>
+                    <span class="stat-label">Efficiency Improvement</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Technical Skills -->
+                <div class="section">
+                    <h2><i class="fas fa-cogs"></i>Technical Skills</h2>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h3>Data Visualization</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Power BI</span>
+                                <span class="skill-tag">DAX</span>
+                                <span class="skill-tag">Data Modeling</span>
+                                <span class="skill-tag">KPI Dashboards</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Data Engineering</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">SQL</span>
+                                <span class="skill-tag">T-SQL</span>
+                                <span class="skill-tag">SSIS</span>
+                                <span class="skill-tag">SQL Server</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h3>BI Reporting</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">ETL Design</span>
+                                <span class="skill-tag">Report Scheduling</span>
+                                <span class="skill-tag">Job Automation</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Tools & Platforms</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">SSAS</span>
+                                <span class="skill-tag">Excel Advanced</span>
+                                <span class="skill-tag">Power Query</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications -->
+                <div class="section">
+                    <h2><i class="fas fa-certificate"></i>Certifications</h2>
+                    <ul class="certifications">
+                        <li>Microsoft Certified: Power BI Data Analyst Associate</li>
+                        <li>Pursuing AI Certification from UpGrad</li>
+                    </ul>
+                </div>
+
+                <!-- Education -->
+                <div class="section">
+                    <h2><i class="fas fa-graduation-cap"></i>Education</h2>
+                    <div class="skill-category">
+                        <h3>Bachelor of Computer Applications (BCA)</h3>
+                        <p>PA College of Engineering, Mangalore | 2008</p>
+                    </div>
+                </div>
+
+                <!-- Languages -->
+                <div class="section">
+                    <h2><i class="fas fa-language"></i>Languages</h2>
+                    <ul class="languages">
+                        <li>English</li>
+                        <li>Hindi</li>
+                        <li>Tamil</li>
+                        <li>Kannada</li>
+                    </ul>
+                </div>
+
+                <!-- Download Resume -->
+                <div class="section">
+                    <center>
+                        <a href="#" class="btn" onclick="window.print()">
+                            <i class="fas fa-download"></i> Download Resume
+                        </a>
+                    </center>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="content">
+                <!-- Professional Summary -->
+                <div class="section">
+                    <h2><i class="fas fa-user"></i>Professional Summary</h2>
+                    <p>Senior Business Intelligence professional offering nearly <strong>17 years of experience</strong> delivering enterprise-wide reporting strategies, driving data-driven decision-making through Power BI, SQL, ETL automation, and cross-functional stakeholder alignment.</p>
+                    <br>
+                    <p>Demonstrated success in streamlining reporting ecosystems, leading the development of <strong>18+ business-critical dashboards</strong>, and achieving a <strong>30% reduction in manual effort and cost</strong> via SSIS-based automation and SQL-driven workflows.</p>
+                    <br>
+                    <p>Microsoft-certified Power BI Analyst with proven ability to design and scale self-service BI platforms, ensuring governance, accuracy, and real-time insights across complex data environments.</p>
+                </div>
+
+                <!-- Work Experience -->
+                <div class="section">
+                    <h2><i class="fas fa-briefcase"></i>Work Experience</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="job-title">Sr. Analyst – Business Intelligence</div>
+                            <div class="company">Dell Technologies</div>
+                            <div class="duration">Dec 2012 – Jun 2025</div>
+                            <ul class="achievements">
+                                <li>Designed, developed, and managed <strong>18 critical dashboards and reports</strong> for executive and business consumption</li>
+                                <li>Automated <strong>80% of manual reporting tasks</strong> using SSIS and SQL-based ETL pipelines, reducing turnaround time by 60%</li>
+                                <li>Developed <strong>100+ interactive Power BI dashboards</strong>, enabling real-time visibility into key KPIs</li>
+                                <li>Spearheaded BI transformation project that consolidated fragmented data sources across <strong>5 systems</strong>, improving data consistency by 98%</li>
+                                <li>Led cross-functional analytics initiative that identified <strong>cost-saving opportunities worth $1.2M annually</strong></li>
+                                <li>Achieved <strong>25% improvement in operational efficiency</strong> across finance and supply chain departments</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="job-title">Technical Support Executive</div>
+                            <div class="company">Sutherland Global Services Ltd.</div>
+                            <div class="duration">Jan 2011 – Nov 2012 & Oct 2009 – Jun 2010</div>
+                            <ul class="achievements">
+                                <li>Delivered front-line technical assistance across various platforms</li>
+                                <li>Achieved <strong>95% satisfaction rating</strong>, resolving 15+ issues daily with minimal escalations</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="job-title">Technical Support Executive</div>
+                            <div class="company">e4e Business Solutions</div>
+                            <div class="duration">Jun 2010 – Jan 2011</div>
+                            <ul class="achievements">
+                                <li>Handled multi-channel customer support with <strong>95% customer satisfaction rate</strong></li>
+                                <li>Resolved an average of <strong>12 customer issues daily</strong></li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="job-title">Associate</div>
+                            <div class="company">Wipro, Kolkata</div>
+                            <div class="duration">Nov 2008 – Oct 2009</div>
+                            <ul class="achievements">
+                                <li>Identified, documented, and escalated technical challenges to specialized teams</li>
+                                <li>Maintained comprehensive expertise in company products and systems</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Core Competencies -->
+                <div class="section">
+                    <h2><i class="fas fa-star"></i>Core Competencies</h2>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <div class="skill-tags">
+                                <span class="skill-tag">Business Intelligence Strategy & Execution</span>
+                                <span class="skill-tag">Report Optimization & Performance Tuning</span>
+                                <span class="skill-tag">Data Cleansing & Quality Management</span>
+                                <span class="skill-tag">Root Cause Analysis & Issue Resolution</span>
+                                <span class="skill-tag">Cross-functional Stakeholder Engagement</span>
+                                <span class="skill-tag">KPI/Metric Definition & Standardization</span>
+                                <span class="skill-tag">Automation of Manual Reporting Workflows</span>
+                                <span class="skill-tag">Data Validation & Reconciliation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Awards & Recognition -->
+                <div class="section">
+                    <h2><i class="fas fa-trophy"></i>Awards & Recognition</h2>
+                    <ul class="achievements">
+                        <li><strong>'Agent of the Segment'</strong> for 3 consecutive quarters</li>
+                        <li><strong>Best Trainee at Dell</strong> - recognized for exceptional performance</li>
+                        <li><strong>Multiple Bravo Awards</strong> - for outstanding contributions</li>
+                        <li><strong>On-the-Spot recognition</strong> - for exceeding quality and service benchmarks</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2025 Faseeh Ahmed. All rights reserved. | Available for opportunities in India & Overseas</p>
+    </div>
+
+    <script>
+        // Add smooth scrolling and interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add animation to elements when they come into view
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all timeline items and sections
+            document.querySelectorAll('.timeline-item, .section, .stat-item').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+
+            // Add hover effects to skill tags
+            document.querySelectorAll('.skill-tag').forEach(tag => {
+                tag.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.05)';
+                    this.style.transition = 'transform 0.2s ease';
+                });
+                tag.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
